@@ -83,3 +83,4 @@ Add.name = 'add'
 
 # Prepare TFRecords
 TFRecordProvider.sample_rate = 48000
+TFRecordProvider.example_secs = 1
