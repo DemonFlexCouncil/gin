@@ -1,6 +1,5 @@
 # -*-Python-*-
-# Autoencoder that decodes from (loudness, f0, z).
-# z = encoder(audio)
+# Autoencoder that decodes from (loudness, f0).
 
 import ddsp
 import ddsp.training
@@ -15,12 +14,12 @@ Autoencoder.preprocessor = @preprocessing.DefaultPreprocessor()
 DefaultPreprocessor.time_steps = 1000
 
 # Encoder
-# Autoencoder.encoder = none
-Autoencoder.encoder = @encoders.MfccTimeDistributedRnnEncoder()
-MfccTimeDistributedRnnEncoder.rnn_channels = 512
-MfccTimeDistributedRnnEncoder.rnn_type = 'gru'
-MfccTimeDistributedRnnEncoder.z_dims = 16
-MfccTimeDistributedRnnEncoder.z_time_steps = 125
+Autoencoder.encoder = none
+# Autoencoder.encoder = @encoders.MfccTimeDistributedRnnEncoder()
+# MfccTimeDistributedRnnEncoder.rnn_channels = 512
+# MfccTimeDistributedRnnEncoder.rnn_type = 'gru'
+# MfccTimeDistributedRnnEncoder.z_dims = 16
+# MfccTimeDistributedRnnEncoder.z_time_steps = 125
 
 # Decoder
 Autoencoder.decoder = @decoders.RnnFcDecoder()
@@ -28,8 +27,8 @@ RnnFcDecoder.rnn_channels = 512
 RnnFcDecoder.rnn_type = 'gru'
 RnnFcDecoder.ch = 512
 RnnFcDecoder.layers_per_stack = 3
-# RnnFcDecoder.input_keys = ('ld_scaled', 'f0_scaled')
-RnnFcDecoder.input_keys = ('ld_scaled', 'f0_scaled', 'z')
+RnnFcDecoder.input_keys = ('ld_scaled', 'f0_scaled')
+# RnnFcDecoder.input_keys = ('ld_scaled', 'f0_scaled', 'z')
 RnnFcDecoder.output_splits = (('amps', 1),
                               ('harmonic_distribution', 120),
                               ('noise_magnitudes', 65))
