@@ -14,7 +14,7 @@ Autoencoder.preprocessor = @preprocessing.DefaultPreprocessor()
 DefaultPreprocessor.time_steps = 1000
 
 # Encoder
-Autoencoder.encoder = none
+Autoencoder.encoder = None
 # Autoencoder.encoder = @encoders.MfccTimeDistributedRnnEncoder()
 # MfccTimeDistributedRnnEncoder.rnn_channels = 512
 # MfccTimeDistributedRnnEncoder.rnn_type = 'gru'
