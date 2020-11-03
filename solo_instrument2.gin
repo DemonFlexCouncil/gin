@@ -12,7 +12,7 @@ get_model.model = @models.Autoencoder()
 
 # Preprocessor
 Autoencoder.preprocessor = @preprocessing.DefaultPreprocessor()
-DefaultPreprocessor.time_steps = 250
+DefaultPreprocessor.time_steps = 1000
 
 # Encoder
 # Autoencoder.encoder = none
