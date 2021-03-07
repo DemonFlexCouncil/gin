@@ -43,7 +43,7 @@ SpectralLoss.fft_sizes = (8192, 4096, 2048, 1024, 512, 256, 128, 64)
 Autoencoder.processor_group = @processors.ProcessorGroup()
 
 ProcessorGroup.dag = [
-  (@synths.Additive(),
+  (@synths.Harmonic(),
     ['amps', 'harmonic_distribution', 'f0_hz']),
   (@synths.FilteredNoise(),
     ['noise_magnitudes']),
