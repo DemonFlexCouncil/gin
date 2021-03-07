@@ -53,12 +53,12 @@ ProcessorGroup.dag = [
     ['add/signal']),
 ]
 
-# Additive Synthesizer
-Additive.name = 'additive'
-Additive.n_samples = 192000
-Additive.sample_rate = 48000
-Additive.normalize_below_nyquist = True
-Additive.scale_fn = @core.exp_sigmoid
+# Harmonic Synthesizer
+Harmonic.name = 'harmonic'
+Harmonic.n_samples = 192000
+Harmonic.sample_rate = 48000
+Harmonic.normalize_below_nyquist = True
+Harmonic.scale_fn = @core.exp_sigmoid
 
 # Filtered Noise Synthesizer
 FilteredNoise.name = 'filtered_noise'
