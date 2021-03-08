@@ -48,7 +48,7 @@ ProcessorGroup.dag = [
   (@synths.FilteredNoise(),
     ['noise_magnitudes']),
   (@processors.Add(),
-    ['filtered_noise/signal', 'additive/signal']),
+    ['filtered_noise/signal', 'harmonic/signal']),
   (@effects.Reverb(),
     ['add/signal']),
 ]
